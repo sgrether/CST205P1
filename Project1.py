@@ -39,6 +39,10 @@ for i in  range(0, xSize):
     for j in range(0, ySize):
         pix[i, j] = final[k]
         k += 1
-
-#print the image
-new.show()
+s = input('1. Show Image\n2. Save Image\n')
+if(s == '1'):
+    #print the image
+    new.show()
+if(s == '2'):
+    #Save image as png
+    new.save('NewImage', 'PNG')
