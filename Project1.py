@@ -3,7 +3,7 @@ import statistics
 import os.path
 
 images = []
-num = 9#int(input('Enter number of images:'))
+num = int(input('Enter number of images:'))
 #Open all images and throw them in a list
 for i in range(1, num+1):
     images.append(Image.open(str(i) + '.png'))
