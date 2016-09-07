@@ -1,6 +1,5 @@
 from PIL import Image
 import statistics
-import os.path
 
 images = []
 num = int(input('Enter number of images:'))
