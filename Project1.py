@@ -1,23 +1,23 @@
 from PIL import Image
 import statistics
+import os.path
 
 images = []
-
+num = 9#int(input('Enter number of images:'))
 #Open all images and throw them in a list
-for i in range(1, 10):
-    img = Image.open('C:/Users/lolib/Dropbox/CST205P1/' + str(i) + '.png')
-    images.append(img)
+for i in range(1, num+1):
+    images.append(Image.open(str(i) + '.png'))
 
 pixels = []
 final = []
-xSize, ySize = img.size
+xSize, ySize = images[0].size
 
 #Create 2D list for pixels
-for i in range(0, 9):
+for i in range(0, num):
     pixels.append([])
 
 #Grab all the pixels and tuple them into the 2D list
-for k in range(0, 9):
+for k in range(0, num):
     for i in range(0, xSize):
         for j in range(0, ySize):
             r, g, b = images[k].getpixel((i,j))
@@ -25,7 +25,9 @@ for k in range(0, 9):
 
 #Grab the same pixels from all images, sort them and get the median
 for i in range(len(pixels[0])):
-    temp = [pixels[0][i], pixels[1][i], pixels[2][i], pixels[3][i], pixels[4][i], pixels[5][i], pixels[6][i], pixels[7][i], pixels[8][i]]
+    temp = []
+    for j in range(0, num):
+        temp.append(pixels[j][i])
     final.append(statistics.median(sorted(temp)))
 
 #Create new image
@@ -39,10 +41,10 @@ for i in  range(0, xSize):
     for j in range(0, ySize):
         pix[i, j] = final[k]
         k += 1
-s = input('1. Show Image\n2. Save Image\n')
-if(s == '1'):
-    #print the image
+inp = input('1. Show Image\n2. Save Image\n')
+if(inp == '1'):
+    print the image
     new.show()
-if(s == '2'):
-    #Save image as png
-    new.save('NewImage', 'PNG')
+if(inp == '2'):
+    Save image as png
+    new.save('NewImage.png', 'PNG')
