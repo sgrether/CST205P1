@@ -43,8 +43,8 @@ for i in  range(0, xSize):
         k += 1
 inp = input('1. Show Image\n2. Save Image\n')
 if(inp == '1'):
-    print the image
+    #print the image
     new.show()
 if(inp == '2'):
-    Save image as png
+    #Save image as png
     new.save('NewImage.png', 'PNG')
