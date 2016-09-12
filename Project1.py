@@ -19,8 +19,8 @@ for i in range(0, num):
 for k in range(0, num):
     for i in range(0, xSize):
         for j in range(0, ySize):
-            r, g, b = images[k].getpixel((i,j))
-            pixels[k].append((r,g,b))
+            temp = images[k].getpixel((i,j))
+            pixels[k].append(temp)
 
 #Grab the same pixels from all images, sort them and get the median
 for i in range(len(pixels[0])):
